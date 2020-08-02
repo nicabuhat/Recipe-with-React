@@ -1,0 +1,660 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:700|Merriweather:400");
+@font-face {
+  font-family: "Ionicons";
+  src: url("//db.onlinewebfonts.com/t/0a0fd5faa7a8d8d24e8a0b49c4389a62.eot");
+  src: url("//db.onlinewebfonts.com/t/0a0fd5faa7a8d8d24e8a0b49c4389a62.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/0a0fd5faa7a8d8d24e8a0b49c4389a62.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/0a0fd5faa7a8d8d24e8a0b49c4389a62.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/0a0fd5faa7a8d8d24e8a0b49c4389a62.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/0a0fd5faa7a8d8d24e8a0b49c4389a62.svg#Ionicons")
+      format("svg");
+}
+
+:root {
+  /* COLOR */
+
+  /* Primary */
+  --primary9: #620042;
+  --primary8: #870557;
+  --primary7: #a30664;
+  --primary6: #bc0a6f;
+  --primary5: #da127d;
+  --primary4: #e8368f;
+  --primary3: #f364a2;
+  --primary2: #ff8cba;
+  --primary1: #ffb8d2;
+  --primary0: #ffe3ec;
+
+  /* Neutral */
+  --neutral9: #1f2933;
+  --neutral8: #323f4b;
+  --neutral7: #3e4c59;
+  --neutral6: #52606d;
+  --neutral5: #616e7c;
+  --neutral4: #7b8794;
+  --neutral3: #9aa5b1;
+  --neutral2: #cbd2d9;
+  --neutral1: #e4e7eb;
+  --neutral0: #f5f7fa;
+
+  /* Secondary */
+  --secondary9: #44056e;
+  --secondary8: #580a94;
+  --secondary7: #690cb0;
+  --secondary6: #7a0ecc;
+  --secondary5: #8719e0;
+  --secondary4: #9446ed;
+  --secondary3: #a368fc;
+  --secondary2: #b990ff;
+  --secondary1: #dac4ff;
+  --secondary0: #f2ebfe;
+
+  /* Accent */
+  --accent9: #05606e;
+  --accent8: #07818f;
+  --accent7: #099aa4;
+  --accent6: #0fb5ba;
+  --accent5: #1cd4d4;
+  --accent4: #3ae7e1;
+  --accent3: #62f4eb;
+  --accent2: #92fdf2;
+  --accent1: #c1fef6;
+  --accent0: #e1fcf8;
+
+  /* Red */
+  --red9: #610316;
+  --red8: #8a041a;
+  --red7: #ab091e;
+  --red6: #cf1124;
+  --red5: #e12d39;
+  --red4: #ef4e4e;
+  --red3: #f86a6a;
+  --red2: #ff9b9b;
+  --red1: #ffbdbd;
+  --red0: #ffe3e3;
+
+  /* Yellow */
+  --yellow9: #8d2b0b;
+  --yellow8: #b44d12;
+  --yellow7: #cb6e17;
+  --yellow6: #de911d;
+  --yellow5: #f0b429;
+  --yellow4: #f7c948;
+  --yellow3: #fadb5f;
+  --yellow2: #fce588;
+  --yellow1: #fff3c4;
+  --yellow0: #fffbea;
+
+  /* Misc */
+  --green: #3ebd93;
+
+  /* Color Intentions */
+  --black: var(--neutral9);
+  --grey: var(--neutral4);
+  --lightGrey: var(--neutral1);
+  --white: var(--neutral0);
+  --primary: var(--primary3);
+  --secondary: var(--secondary3);
+  --accent: var(--accent4);
+
+  --background: var(--white);
+  --textColor: var(--black);
+  --buttonTextColor: var(--black);
+  --lineColor: var(--lightGrey);
+  --cardBg: var(--lightGrey);
+  --headerBackground: var(--accent9);
+  --tableHeadingColor: var(--neutral7);
+  --tableRowEvenColor: var(--neutral1);
+  --tableRowOddColor: var(--neutral0);
+  --tableHoverColor: var(--neutral6);
+  --tableHoverText: var(--white);
+  --formBgColor: var(--lightGrey);
+  --formInputColor: var(--background);
+  --formInputPlaceholderColor: var(--grey);
+  /* Styles */
+  --line: solid 1px var(--lineColor);
+  --insideShadow: inset 0 0 0 2px var(--white);
+
+  /* Type */
+  --baseFontSize: 112.5%;
+  --headingFont: "Fira Sans", sans-serif;
+  --bodyFont: "Merriweather", serif;
+  --h1: 3.052em;
+  --h2: 2.441em;
+  --h3: 1.953em;
+  --h4: 1.563em;
+  --h5: 1.25em;
+  --smallText: 0.8em;
+
+  /* ELEVATION */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* POSITIONING */
+  --containerPadding: 2.5%;
+  --containerWidth: 80%;
+  --headerHeight: 3rem;
+  --borderRadius: 4px;
+}
+
+html {
+  font-size: var(--baseFontSize);
+  box-sizing: border-box;
+} /*18px*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: white;
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.7;
+  background: var(--background);
+  color: var(--textColor);
+  background: var(--background);
+}
+
+header {
+  --headerHeight: 3rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: var(--headerBackground);
+  color: var(--white);
+  height: var(--headerHeight);
+  box-shadow: var(--shadow-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--containerPadding);
+}
+
+.logo {
+  font-size: var(--baseFontSize);
+  margin: 0;
+}
+
+header nav a {
+  /* --lineColor: var(--); */
+  color: var(--white);
+}
+
+header nav a + a {
+  margin-left: 10px;
+}
+
+footer {
+  --footerColor: var(--white);
+  color: var(--footerColor);
+  background: var(--neutral7);
+  padding: 2rem var(--containerPadding);
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+footer a {
+  color: var(--footerColor);
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* TYPE */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: var(--headingFont);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+small,
+.text_small {
+  font-size: var(--smallText);
+}
+
+/* QUOTE */
+
+blockquote {
+  border-left: 3px solid var(--secondary);
+  font-style: italic;
+  margin: 1.1em -2em;
+  padding: 1em 2em;
+  position: relative;
+  transition: 0.2s border ease-in-out;
+  z-index: 0;
+}
+blockquote:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  height: 2em;
+  background-color: var(--background);
+  width: 5px;
+  margin-top: -1em;
+}
+blockquote:after {
+  content: "\f347";
+  position: absolute;
+  top: 50%;
+  left: -0.5em;
+  color: var(--secondary);
+  font-family: "Ionicons";
+  font-style: normal;
+  line-height: 1em;
+  text-align: center;
+  text-indent: -2px;
+  width: 1em;
+  margin-top: -0.5em;
+  transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
+}
+
+blockquote:active:after {
+  transform: rotateY(360deg);
+}
+blockquote cite {
+  display: block;
+  font-size: 0.75em;
+  line-height: 1.8em;
+  margin-top: 1em;
+}
+
+hr {
+  border-top: var(--line);
+}
+
+/* LINK */
+a {
+  color: var(--textColor);
+  text-decoration: none;
+  border-bottom: 2px solid var(--lineColor);
+  position: relative;
+  transition: color ease 0.3s;
+}
+
+p a,
+blockquote a {
+  --lineColor: var(--primary);
+}
+
+a::before,
+a::after {
+  content: "";
+  position: absolute;
+  background-color: var(--lineColor);
+  z-index: -1;
+  height: 5%;
+}
+
+a::before {
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  transition: width ease 0.4s;
+}
+
+a::after {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transition: all ease 0.6s;
+}
+
+a:hover::before {
+  width: 100%;
+}
+
+a:hover::after {
+  left: 100%;
+  width: 0%;
+  transition: all ease 0.2s;
+}
+
+/* BUTTON */
+
+button {
+  padding: 0.9rem 1.7rem;
+  transition: all 0.3s ease-in-out;
+  background: var(--buttonColor);
+  border: solid 1px var(--black);
+  box-shadow: inset 0 0 0 2px var(--white);
+  margin-right: 1em;
+  color: var(--buttonTextColor);
+  border-radius: var(--borderRadius);
+}
+
+button:hover {
+  text-decoration: underline;
+  background: var(--buttonHover);
+  box-shadow: inset 0 0 0 4px var(--white);
+  cursor: pointer;
+  box-shadow: var(--shadow-2);
+}
+
+button[disabled] {
+  opacity: 0.4;
+}
+
+button.primary {
+  --buttonColor: var(--primary2);
+  --buttonHover: var(--primary0);
+}
+
+button.secondary {
+  --buttonColor: var(--secondary2);
+  --buttonHover: var(--secondary0);
+}
+button.accent {
+  --buttonColor: var(--accent2);
+  --buttonHover: var(--accent0);
+}
+
+button.cancel {
+  --buttonColor: var(--red3);
+  --buttonHover: var(--red0);
+  --textColor: var(--white);
+}
+
+button.warning {
+  --buttonColor: var(--yellow3);
+  --buttonHover: var(--yellow0);
+}
+
+button.small {
+  font-size: var(--smallText);
+}
+
+.buttons button {
+  margin-bottom: 1rem;
+}
+
+/* FORM */
+form {
+  width: 500px;
+  background-color: var(--formBgColor);
+  border-radius: var(--borderRadius);
+}
+
+label {
+  display: block;
+  font-size: var(--smallText);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: var(--line);
+  border-radius: var(--borderRadius);
+  background-color: var(--formInputColor);
+  margin-bottom: 16px;
+  color: var(--textColor);
+}
+
+::placeholder {
+  color: var(--formInputPlaceholderColor);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  border: 1px solid transparent;
+  height: 30px;
+  transition: all 0.3s;
+}
+
+tr td {
+  padding: 10px 0;
+}
+
+tr td > *:last-child {
+  margin: 0;
+}
+
+th {
+  background: var(--tableHeadingColor);
+  color: var(--white);
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+tr:nth-child(even) td {
+  background: var(--tableRowEvenColor);
+}
+
+tr:nth-child(odd) td {
+  background: var(--tableRowOddColor);
+}
+
+td:first-child {
+  text-align: center;
+}
+
+td:nth-child(2) {
+  padding: 0.5rem 1rem;
+}
+
+tr td:hover {
+  background: var(--tableHoverColor);
+  color: var(--tableHoverText);
+}
+
+/* CARD */
+.card {
+  padding: 2em;
+  background-color: var(--cardBg);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-3);
+}
+
+.card > *:first-child,
+.card > *:last-child {
+  margin-top: 0;
+} /* remove top and bottom items margin*/
+
+/* LAYOUT */
+
+.layout {
+  padding: calc(2rem + var(--headerHeight)) 0;
+  margin: 0 auto;
+  width: var(--containerWidth);
+}
+
+.grid {
+  --gridCols: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+}
+
+.cols-3 {
+  --gridCols: 3;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 20px;
+}
+
+.flex {
+  --justifyContent: space-between;
+  display: flex;
+  justify-content: var(--justifyContent);
+  flex-wrap: wrap;
+}
+
+.flex-around {
+  --justifyContent: space-around;
+}
+
+.flex::after {
+  content: "";
+  flex: auto;
+}
+
+.with-border {
+  padding: 2em;
+  border: 1px solid var(--black);
+  box-shadow: var(--insideShadow);
+}
+
+.dark {
+  --background: var(--black);
+  --textColor: var(--white);
+  --lightGrey: var(--neutral7);
+  --headerBackground: var(--neutral8);
+  --cardBg: var(--neutral8);
+  --tableRowEvenColor: var(--neutral6);
+  --tableRowOddColor: var(--neutral5);
+  --tableHoverColor: var(--neutral3);
+  --formBgColor: var(--neutral8);
+  --formInputColor: var(--neutral4);
+  --formInputPlaceholderColor: var(--white);
+  --buttonTextColor: var(--white);
+}
+
+.dark button.primary {
+  --buttonColor: var(--primary7);
+  --buttonHover: var(--primary6);
+}
+.dark button.secondary {
+  --buttonColor: var(--secondary7);
+  --buttonHover: var(--secondary6);
+}
+.dark button.accent {
+  --buttonColor: var(--accent7);
+  --buttonHover: var(--accent6);
+}
+.dark button.warning {
+  --buttonColor: var(--yellow7);
+  --buttonHover: var(--yellow6);
+}
+.dark button.cancel {
+  --buttonColor: var(--red7);
+  --buttonHover: var(--red6);
+}
+
+.dark button {
+  --buttonColor: var(--neutral7);
+  --buttonHover: var(--neutral6);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  body,
+  html {
+    font-size: 18px;
+  }
+}
+@media (max-width: 980px) {
+  body,
+  html {
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 720px;
+    padding: 0 3em 3em;
+  }
+
+  blockquote {
+    font-size: 1.1em;
+    margin: 1.1em -2em;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --baseFontSize: 100%;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+  .container {
+    padding: 0 2em 3em;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  blockquote {
+    border-top: 2px solid var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+    border-left: none;
+    margin: 1.5em 0;
+    padding: 1.5em 1em;
+  }
+  blockquote:before {
+    left: 50%;
+    top: 0;
+    height: 4px;
+    margin-top: -3px;
+    margin-left: -1em;
+    width: 2em;
+  }
+  blockquote:after {
+    font-size: 0.75em;
+    left: 50%;
+    top: 0;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+  }
+  blockquote cite {
+    text-align: right;
+  }
+}
