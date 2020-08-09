@@ -15,7 +15,7 @@ export default function Recipe(props) {
     } = props;
 
     return (
-        <section className="recipe with-border card">
+        <section className="with-border card">
             <div className=" grid cols-10">
                 <div className="cols-7-10">
                     <h3>{name}</h3>
@@ -56,11 +56,8 @@ export default function Recipe(props) {
                 <span>
                     <b>Instruction</b>
                 </span>
-                <ul>
-                    {instructions.map((instruction) => {
-                        return <li>{instruction}</li>;
-                    })}
-                </ul>
+                <br />
+                <span>{instructions}</span>
             </div>
             <div className="recipe__section">
                 <span>

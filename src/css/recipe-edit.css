@@ -1,0 +1,50 @@
+:root {
+    --inputWidth: 80%;
+    --recipeEditWidth: calc(50% - var(--containerPadding));
+}
+
+.recipe-edit {
+    position: fixed;
+    top: calc(var(--headerHeight) + 2rem);
+    right: var(--containerPadding);
+    bottom: calc(var(--containerPadding) + 2rem);
+    width: var(--recipeEditWidth);
+    padding: 2rem;
+    max-height: calc(100% - var(--containerPadding) * 2 - var(--headerHeight));
+    overflow-y: auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.flex {
+    align-items: flex-start;
+}
+
+.form-group > input,
+textarea {
+    font-size: var(--smallText);
+    width: var(--inputWidth);
+}
+
+@media (max-width: 767px) {
+    .recipe-edit {
+        --recipeEditWidth: calc(48% - var(--containerPadding));
+    }
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group > input,
+    textarea {
+        --inputWidth: 100%;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}

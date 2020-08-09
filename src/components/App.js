@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import RecipeList from './RecipeList';
+import RecipeEdit from './RecipeEdit';
 import '../css/app.css';
 import { v4 as uuidv4 } from 'uuid';
 
 export const RecipeContext = React.createContext();
 
+const LOCAL_STORAGE_KEY = 'recipeWithReact.recipes';
+
 function App() {
     const [recipes, setRecipes] = useState(sampleRecipes);
+
+    useEffect(() => {
+        const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON));
+    }, []);
+
+    useEffect(() => {
+        console.log('rendered');
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+    }, [recipes]);
+
     const RecipeContextValue = {
         handleRecipeAdd,
         handleRecipeDelete,
@@ -20,7 +34,7 @@ function App() {
             cookTime: 'cooktime',
             servings: 'servings',
             calories: 'calories',
-            instructions: ['1. step 1', '2. step 2'],
+            instructions: `1. step 1, 2. step 2`,
             ingredients: [
                 {
                     id: uuidv4(),
@@ -42,6 +56,7 @@ function App() {
             <Header></Header>
             <main className="layout">
                 <RecipeList recipes={recipes}></RecipeList>
+                <RecipeEdit></RecipeEdit>
             </main>
         </RecipeContext.Provider>
     );
@@ -54,11 +69,9 @@ const sampleRecipes = [
         cookTime: '25 min',
         servings: '2',
         calories: '300 cal',
-        instructions: [
-            '1. Grill Chicken',
-            '2. Dissolve pesto powder',
-            '3. Mix chicken in pesto sauce',
-        ],
+        instructions: `1. Grill Chicken',
+            2. Dissolve pesto powder,
+            3. Mix chicken in pesto sauce`,
         ingredients: [
             {
                 id: 1,

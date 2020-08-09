@@ -5,7 +5,7 @@ import { RecipeContext } from './App';
 export default function RecipeList({ recipes }) {
     const { handleRecipeAdd } = useContext(RecipeContext);
     return (
-        <>
+        <div className="recipe">
             <div>
                 {recipes.map((recipe) => {
                     return <Recipe key={recipe.id} {...recipe}></Recipe>;
@@ -14,6 +14,6 @@ export default function RecipeList({ recipes }) {
             <button className="warning" onClick={handleRecipeAdd}>
                 Add Recipe
             </button>
-        </>
+        </div>
     );
 }
