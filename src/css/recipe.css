@@ -18,3 +18,11 @@ button {
 .recipe__section:not(:last-child) {
     margin: 2rem 0;
 }
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.recipe__section--instructions {
+    white-space: pre-line;
+}

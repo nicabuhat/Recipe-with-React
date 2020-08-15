@@ -14,6 +14,33 @@
     overflow-y: auto;
 }
 
+.recipe-edit__ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    align-items: stretch;
+}
+
+.recipe-edit__ingredient-grid > button {
+    align-self: stretch;
+}
+
+.recipe-edit__ingredient-grid > input {
+    margin: 0;
+}
+
+.recipe-edit__ingredient-btn-container {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.recipe-edit__ingredient--label {
+    font-size: var(--smallText);
+    font-weight: bold;
+}
+
 .form-group {
     display: flex;
     justify-content: space-between;
@@ -32,6 +59,10 @@ textarea {
 }
 
 @media (max-width: 767px) {
+    .flex {
+        flex-direction: row;
+    }
+
     .recipe-edit {
         --recipeEditWidth: calc(48% - var(--containerPadding));
     }
@@ -42,6 +73,10 @@ textarea {
     .form-group > input,
     textarea {
         --inputWidth: 100%;
+    }
+
+    .recipe-edit__ingredient-grid {
+        grid-template-columns: 1fr;
     }
 
     .card {
